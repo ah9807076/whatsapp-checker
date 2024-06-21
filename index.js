@@ -41,7 +41,8 @@ function checkWhatsAppNumber(phoneNumber) {
     '+201008307668': true, // Assuming this number exists on WhatsApp
     '+201008307669': false // Assuming this number doesn't exist on WhatsApp
   };
-  return knownNumbers[phoneNumber] || false;
+  // Return the value if the number is known, or false otherwise
+  return knownNumbers[phoneNumber] !== undefined ? knownNumbers[phoneNumber] : false;
 }
 app.listen(port, () => {
   console.log(
